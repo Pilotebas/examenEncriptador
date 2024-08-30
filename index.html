@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtro</title>
+    <title>Challenge_Encriptador_ONE.ARuizMontana</title>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/main.js"></script>
 </head>
@@ -14,31 +14,31 @@
         </div>
     </header>
     <main>
-        <div class="entrada">
-            <form id="entrada-info">
+        <section class="main__form-input">
+            <form id="myForm">
                 <textarea name="valor" class="entrada-texto" cols="30" rows="10" placeholder="Ingrese el texto aquí" ></textarea>
                 <div class="form-input__condition">
-                    <div class="entrada-aviso">
+                    <div class="form-input__menssage">
                         <img src="storage/img/IconoExclamacion.png"> <small>Solo letras minúsculas y sin acentos</small>
                     </div>
-                    <div class="entrada-botones">
+                    <div class="form-input__button">
                         <input type="submit" data-accion="encriptar" value="Encriptar">
                         <input type="submit" data-accion="desencriptar" value="Desencriptar">
                     </div>
                 </div>
             </form>
-        </div>
-        <div class="salida">
-           <div class="salida active">
+        </section>
+        <section class="main__form-ouput">
+           <article class="form-ouput active">
             <img src="storage/img/Muñeco.png">
             <h1>Ningún mensaje fue encontrado</h1>
             <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-           </div>
-           <div class="salida-final">
+           </article>
+           <article class="form-ouput__menssage">
             <p></p>
             <input type="button" id="copy" value="Copiar">
-            </div>
-        </div>
+            </article>
+        </section>
     </main>
 
 </body>

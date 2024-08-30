@@ -6,11 +6,30 @@
     box-sizing: border-box;
 
 }
+::-webkit-scrollbar-track
+{
+	background-color: var(--bg-secondary);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: var(--bg-prymary);
+    border-radius: 3px;
+	border: none;
+    cursor: pointer;
+}
 
 body{
     background: var(--bg-tertiary);
 }
 header{
+    /* background: red; */
     display: inline-block;
     position: absolute;
     width: 120px;
@@ -23,25 +42,39 @@ header{
     height: 100%;
 }
 
-
+/* .contenedor__logo{
+    background: orange;
+} */
 main{
+    /* background: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 100vh;
 }
-.entrada{
+.main__form-input{
+    /* background: green; */
     display: flex;
-    padding: 168px 40px 72px 240px;
+    padding-top: 168px;
+    padding-left: 240px;
+    padding-right: 40px;
+    padding-bottom: 72px;
     flex: 4;
 }
-.entrada form{
+.main__form-input form{
+    /* background: fuchsia; */
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
 }
-.entrada form textarea{
+.main__form-input form textarea::-webkit-input-placeholder {
+    color: var(--color-secondary);
+    }
+.main__form-input form textarea{
+    resize: none;
+    color: var(--color-secondary);
+    font-family: "Inter_28pt-Regular";
     font-size: 32px;
     border: none;
     outline: none;
@@ -51,48 +84,51 @@ main{
     display: flex;
     flex-direction: column;
 }
-.entrada-aviso{
+.form-input__menssage{
     display: flex;
     gap: 8px;
     margin-bottom: 16px;
 }
 .form-input__condition small{
     color: var(--color-tertiary);
+    font-family: "Inter_18pt-Regular";
     font-size: 12px;
 }
-.entrada-botones{
+.form-input__button{
     display: flex;
     justify-content: space-between;
     gap: 24px;
 }
-.entrada-botones input[type="submit"],
-.salida-final input[type="button"]{
+.form-input__button input[type="submit"],
+.form-ouput__menssage input[type="button"]{
     width: 100%;
     height: 67px;
     border: none;
     outline: none;
     border-radius: 24px;
+    font-family: "Inter_18pt-Regular";
     font-size: 16px;
     cursor: pointer;
     border: 1px solid var(--bg-prymary);
 }
-.entrada-botones input[type="submit"]:first-child{
+.form-input__button input[type="submit"]:first-child{
     background: var(--bg-button-prymary);
     color: var(--color-prymary);
 }
-.entrada-botones input[type="submit"]:last-child{
+.form-input__button input[type="submit"]:last-child{
     background: var(--bg-button-secondary);
     color: var(--color-secondary);
 }
-.salida-final input[type="button"]{
+.form-ouput__menssage input[type="button"]{
     background: transparent;
 }
 
-.salida{
+.main__form-ouput{
+    /* background: orange; */
     flex: 1;
     padding: 64px 40px 40px;
 }
-.form-ouput, .salida-final{
+.form-ouput, .form-ouput__menssage{
     background: var(--bg-quarter);
     display: none;
     flex-direction: column;
@@ -104,7 +140,7 @@ main{
     padding: 32px;
     box-shadow: 0px 24px 32px -8px var(--bg-secondary);
 }
-.salida-final{
+.form-ouput__menssage{
     justify-content: space-between;
 }
 .form-ouput img{
@@ -112,15 +148,19 @@ main{
 }
 .form-ouput h1{
     font-size: 24px;
+    /* background: red; */
     text-align: center;
     margin-bottom: 5px;
+    font-family: "Inter_24pt-Bold";
 }
 .form-ouput p{
+    font-family: "Inter_18pt-Regular";
     font-size: 16px;
     text-align: center;
 }
-.salida-final p{
+.form-ouput__menssage p{
     color: var(--color-tertiary);
+    font-family: "Inter_24pt-Regular";
     font-size: 24px;
     word-wrap: break-word;
     width: 100%;
@@ -136,12 +176,12 @@ main{
     /* body{
         background: red;
     } */
-    .entrada{
+    .main__form-input{
         padding-left: 120px;
     }
 }
 @media (max-width: 1170px) {
-    .entrada{
+    .main__form-input{
         padding-left: 40px;
     }
 }
@@ -154,13 +194,13 @@ main{
     main{
         flex-direction: column;
     }
-    .salida{
+    .main__form-ouput{
         padding-top: 0;
     }
-    .form-ouput, .salida-final{
+    .form-ouput, .form-ouput__menssage{
         width: 100%;
     }
-    .salida-final p{
+    .form-ouput__menssage p{
         margin-bottom: 32px;
         height: 180px;
     }
@@ -178,18 +218,18 @@ main{
         top: 24px;
         left: -30px;
     }
-    .entrada{
+    .main__form-input{
         padding-top: 152px;
         padding-left: 16px;
         padding-right: 16px;
     }
-    .salida{
+    .main__form-ouput{
         padding: 0 16px 16px ;
     }
-    .entrada-botones{
+    .form-input__button{
         flex-direction: column;
     }
-    .salida-final p{
+    .form-ouput__menssage p{
         height: 432px;
     }
 }
